@@ -1,7 +1,7 @@
 import express from 'express';
 import patientDataRoutes from './routes/route.js';
 // import apiKeyAuth from './middleware/apiKeyAuth.js';
-// import cors from 'cors';
+import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -10,13 +10,13 @@ const port = process.env.PORT || 3000;
 const corsOptions = {
   origin: '*', // Replace with your frontend's domain
   methods: ['GET', 'POST'], // Specify the methods you want to allow
-  allowedHeaders: ['Content-Type', 'x-api-key'] // Specify the headers you want to allow
+  allowedHeaders: '*' // Specify the headers you want to allow
 };
 
 // Middleware
 app.use(express.json()); // For parsing JSON request bodies
 // app.use(apiKeyAuth);
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 
 // Routes
