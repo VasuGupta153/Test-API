@@ -1,7 +1,7 @@
 import express from 'express';
 import patientDataRoutes from './routes/route.js';
-import apiKeyAuth from './middleware/apiKeyAuth.js';
-import cors from 'cors';
+// import apiKeyAuth from './middleware/apiKeyAuth.js';
+// import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -15,8 +15,8 @@ const corsOptions = {
 
 // Middleware
 app.use(express.json()); // For parsing JSON request bodies
-app.use(apiKeyAuth);
-app.use(cors(corsOptions));
+// app.use(apiKeyAuth);
+// app.use(cors(corsOptions));
 
 
 // Routes
