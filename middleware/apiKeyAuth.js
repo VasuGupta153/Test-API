@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const apiKeyAuth = (req, res, next) => {
+    console.log(req.headers);
     const apiKey = req.headers['x-api-key'];
     if (apiKey !== process.env.SECRET_API_KEY) {
         console.log("Unauthorized Access!")
