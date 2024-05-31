@@ -15,7 +15,7 @@ const corsOptions = {
 
 // Middleware
 app.use(express.json()); // For parsing JSON request bodies
-app.use(apiKeyAuth);
+// app.use(apiKeyAuth);
 app.use(cors(corsOptions));
 
 
